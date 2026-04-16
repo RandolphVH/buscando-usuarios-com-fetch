@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/responsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
 </head>
 
@@ -20,7 +21,10 @@
             <header>
                 <h2>Buscar Usuário</h2>
                 <input type="text" id="input-search" placeholder="Digite o nome do usuário no GitHub">
-                <input type="button" value="Buscar" id="btn-search">
+                <div class="btn-search-wrapper">
+                    <input type="button" value="Buscar" id="btn-search">
+                    <span class="btn-spinner"></span>
+                </div>
             </header>
 
             <div class="profile-data"></div>

@@ -27,10 +27,24 @@ function validateEmptyInput(userName) {
     }
 }
 
+function setLoading(isLoading) {
+    const button = document.getElementById('btn-search');
+    if(isLoading) {
+        button.classList.add('loading');
+        button.disabled = true;
+    } else {
+        button.classList.remove('loading');
+        button.disabled = false;
+    }
+}
+
 async function getUserData(userName) {
+    setLoading(true);
+    
     const userResponse = await getUser(userName);
     
     if(userResponse.message === 'Not Found') {
+        setLoading(false);
         screen.renderNotFound();
         return;
     }
@@ -39,5 +53,6 @@ async function getUserData(userName) {
     user.setInfo(userResponse);
     user.setRepositories(repositoriesResponse)
     
+    setLoading(false);
     screen.renderUser(user);
 }
