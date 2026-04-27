@@ -141,16 +141,39 @@ main {
   justify-content: center;
 }
 
-.container .profile-data .repositories ul li a {
+.container .profile-data .repositories .repo-item {
   padding: 20px;
   border: 1px solid grey;
   margin: 20px;
-  display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
 }
 
-.container .profile-data .repositories ul li a:hover {
+.container .profile-data .repositories .repo-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 17px;
+  color: #3D3D3D;
+  font-weight: bold;
+}
+
+.container .profile-data .repositories .info-item {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.container .profile-data .repositories .info-item span {
+  padding: 5px;
+  background-color: rebeccapurple;
+  color: #FFFFFF;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.container .profile-data .repositories .repo-item:hover {
   background-color: hotpink;
   color: #fff
 }
