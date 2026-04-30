@@ -1,4 +1,3 @@
-import { repoLanguagesUrl } from '../variables.js';
 import { getLanguages } from '../services/languages.js';
 
 async function renderRepository(repo, languages) {
@@ -41,7 +40,7 @@ const screen = {
     if (user.repositories.length > 0) {
       this.userProfile.innerHTML += `<div class="repositories section">
         <h2>Repositórios</h2>
-        <ul>${repositoriesItens}</ul>
+        <ul>${repositoriesItens.join('')}</ul>
       </div>`;
     }
   },
